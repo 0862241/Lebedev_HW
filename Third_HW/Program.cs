@@ -55,4 +55,22 @@ Console.WriteLine(Distance(x1, y1, z1, x2, y2, z2));
 /* Exsercise 3. Write a program that takes a number (N) as input
  and outputs a table of cubes of numbers from 1 to N. */
 
- 
+/*
+ void Cube(int N)
+ {
+    int count = 1;
+
+    while(count <= N)
+    {
+    int c = count*count*count;
+    Console.WriteLine($" {count} > {c} ");
+    count++;
+    }
+ }
+
+ Console.Write(" This program takes a number (N) as input and outputs a table of cubes of numbers from 1 to N.");
+ Console.Write(" Please enter a number N ");
+ int num = Convert.ToInt32(Console.ReadLine());
+ Cube(num);
+
+ */
