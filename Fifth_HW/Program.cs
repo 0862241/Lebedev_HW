@@ -124,28 +124,50 @@ double[] CreateRandomArray(int size, int minValue, int maxValue)
 
     for(int i = 0; i < size; i++)
     {
-        array[i] = new Random().Next(minValue, maxValue + 1) + new Random().NextDouble(minValue, maxValue);
+        array[i] = new Random().Next(minValue, maxValue + 1) + new Random().NextDouble();
 
         
     }
     return array;
 }
 
-/*int GetSumOfUnevenIndex(int[] array)
+
+double GetDiffMaxMin(double[] array)
 {
-    int sum = 0;
+    double max = array[0];
+    double min = array[0];
+    
+    double diff = 0;
 
-    for(int i = 0; i < array.Length; i = i+2)
+    for(int i = 0; i < array.Length; i++)
     {
-        sum += array[i];
-    }
+        if(max > array[i]) 
+        {
+            max = max;
+        }
+            else 
+        {   
+            max = array[i];
+        }
+        if(min < array[i])
+        {
+            min = min;
+        }
+            else
+        {
+            min = array[i];
+        }
+        
+        diff = max - min;
 
-    return sum;
+    }
+    
+    return diff;
 
 
 }
 
-*/
+
 void ShowArray(double[] array)
 {
     for(int i = 0; i < array.Length; i++)
@@ -166,8 +188,10 @@ int max = Convert.ToInt32(Console.ReadLine());
 
 CreateRandomArray(lenght, min, max);
 
+
 double[] newArray = CreateRandomArray(lenght, min, max);
 ShowArray(newArray);
 
-/*int result = GetSumOfUnevenIndex(newArray);
-Console.WriteLine("Sum of negatives in this array is  " + result);*/
+double result = GetDiffMaxMin(newArray);
+//Console.WriteLine("Maximum in this array is  " + a);
+Console.WriteLine("Differrence of Max and Min in this array is  " + result);
